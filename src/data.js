@@ -71,9 +71,9 @@ export default {
 
     // TODO: mesaages should be dynamic based on scenario state values
     "scenarios": {
-        "farmerAndLibrarian": {
-            "id": "farmerAndLibrarian",
-            "name": "farmerAndLibrarian",
+        "farmerORLibrarian": {
+            "id": "farmerORLibrarian",
+            "name": "farmerORLibrarian",
             "property": "bayesTheorem",
             "background": ["person.jpg", "repeat"],
             "colors": [],

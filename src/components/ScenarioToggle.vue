@@ -1,6 +1,7 @@
 <template>
     <div class="scenario-toggle flex-1 flex-center" :class="{active: active}"> <p>{{ scenarioName }}</p> </div>
 </template>
+
 <script>
 
 export default {

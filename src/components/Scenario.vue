@@ -14,11 +14,15 @@
                 v-bind:active="item.active"
             ></world-set>
 
-            <!-- <p class="message message-intro"
-                v-for="item in stages"
-            ></p> -->
+  
             
-
+            <message
+                v-for="item in stages"
+                v-bind:key="id + '_' + item.id"
+                v-bind:id="item.id"
+                v-bind:message="item.message"
+                v-bind:active="item.active"
+            ></message>
         </section>
 
         <section class="properties">
@@ -33,10 +37,11 @@
 <script>
 
 import WorldSet from './WorldSet.vue';
+import Message from './Message.vue';
 import PropertyBayes from './PropertyBayes.vue';
 
 export default {
-    components: { WorldSet, PropertyBayes },
+    components: { WorldSet, PropertyBayes, Message },
     props: {
         id: String,
         name: String,

@@ -54,7 +54,7 @@ import data from './data';
         Object.keys(this.scenarios).map(key => {
             this.scenarios[key]['active'] = false
         });
-        this.activateScenario("farmerAndLibrarian")
+        this.activateScenario("farmerORLibrarian")
         // this.$refs.fileInput.click()
     },
     methods: {
