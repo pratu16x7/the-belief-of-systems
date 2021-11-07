@@ -113,6 +113,7 @@ export default {
         console.log('last', this.id, this.background);
         if (this.background && this.background.length > 0) {
             this.$refs['worldMap'].style.background = `url(${img_map[this.background[0]]})`;
+            this.$refs['worldMap'].style.opacity = "0.6";
             if(this.background[1] == "cover") {
                 this.$refs['worldMap'].style.backgroundSize = 'cover';
             }

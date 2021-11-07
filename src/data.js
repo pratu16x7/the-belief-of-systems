@@ -80,25 +80,25 @@ export default {
             "icon": "",
             "messages": {
                 "intro": {
-                    "message": "Steve is a meek and tidy soul" // 
+                    "message": '"Steve is a meek and tidy soul". What would you think is more likely, that Steve is a farmer or a librarian?' // 
                 },
                 "prePrior": {
-                    "message": ""
+                    "message": "Let's say this is your entire population of librarians and farmers"
                 },
                 "prior": {
-                    "message": "Forget the info, what do you already know?"
+                    "message": "Forget the info, what do we already know? We know that farmers are more numerous than librarians"
                 },
                 "evidenceBeliefFormulation": {
-                    "message": "So librarians is 4 times more likely"
+                    "message": "Let's say librarians are 4 times more likely to fit the evidence"
                 },
                 "updateBasedOnEvidence": {
-                    "message": "That how it would look in our current world"
+                    "message": "That is how it would look in our sample population"
                 },
                 "ourNewWorld": {
-                    "message": "This is our new world"
+                    "message": "This is our new world, our belief, and we only need to divide number of librarians who fit by the total people who fit the description."
                 },
                 "propertyGraphical": {
-                    "message": "And this is our value"
+                    "message": "And thus we have the value of P( Libarian | Evidence ) :)"
                 },
                 // "calculations": {
                 //     "message": "And this is our value"
@@ -114,13 +114,13 @@ export default {
             "icon": "",
             "messages": {
                 "intro": {
-                    "message": "Steve is a meek and tidy soul" // 
+                    "message": "Let's say a person tested negative for Covid-19. What is more likely, that they don't have Covid or they do?" // 
                 },
                 "prePrior": {
-                    "message": ""
+                    "message": "Well, what do we know already?"
                 },
                 "prior": {
-                    "message": "Forget the info, what do you already know?"
+                    "message": "We know that Covid patients are more numerous that those who don't have it"
                 },
                 "evidenceBeliefFormulation": {
                     "message": "So librarians is 4 times more likely"
@@ -148,7 +148,7 @@ export default {
             "icon": "",
             "messages": {
                 "intro": {
-                    "message": "Steve is a meek and tidy soul" // 
+                    "message": "Let's say your search system has brought you documents that it thinks are relevant to your query. What is more likely, that they're relevant or not?" // 
                 },
                 "prePrior": {
                     "message": ""
@@ -157,7 +157,7 @@ export default {
                     "message": "Forget the info, what do you already know?"
                 },
                 "evidenceBeliefFormulation": {
-                    "message": "So librarians is 4 times more likely"
+                    "message": "So  is 4 times more likely"
                 },
                 "updateBasedOnEvidence": {
                     "message": "That how it would look in our current world"
@@ -182,7 +182,7 @@ export default {
             "icon": "",
             "messages": {
                 "intro": {
-                    "message": "Steve is a meek and tidy soul" // 
+                    "message": "Let's say you make an Object Detection System and this is how it capture the object in an image? What is it's precision?" // 
                 },
                 "prePrior": {
                     "message": ""
@@ -191,7 +191,7 @@ export default {
                     "message": "Forget the info, what do you already know?"
                 },
                 "evidenceBeliefFormulation": {
-                    "message": "So librarians is 4 times more likely"
+                    "message": "So is 4 times more likely"
                 },
                 "updateBasedOnEvidence": {
                     "message": "That how it would look in our current world"

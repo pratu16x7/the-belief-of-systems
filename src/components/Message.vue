@@ -14,5 +14,8 @@ export default {
 </script>
 
 <style scoped>
-
+.message {
+    width:300px;
+    text-align: center;
+}
 </style>
