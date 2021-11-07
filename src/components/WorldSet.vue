@@ -1,20 +1,20 @@
 <template>
     <div class="world-set" :style="{height: size + 'px', width: size + 'px'}">
-        <div v-if="stage=='world-prior'" class="world-prior">
-            <div class="world-true" :style="{height: size + 'px', width: true_percent + '%'}"></div>
-            <div class="world-false" :style="{height: size + 'px', width: (100 - true_percent - reduce_percent) + '%'}"></div>
+        <div v-if="stage=='world-prior'" class="world-prior" ref="worldPrior">
+            <div class="world-true" ref="worldTrue" :style="{height: size + 'px', width: true_percent + '%'}"></div>
+            <div class="world-false" ref="worldFalse" :style="{height: size + 'px', width: (100 - true_percent - reduce_percent) + '%'}"></div>
         </div>
 
         <div v-if="stage=='world-update-based-on-evidence'" class="world-update-based-on-evidence">
-            <div class="world-true" :style="{height: size + 'px', width: true_percent + '%'}">
-                
-                <div class="world-true-not-fit" :style="{height: (100 - true_fit_percent - reduce_percent) + '%'}"></div>
-                <div class="world-true-fit" :style="{height: true_fit_percent + '%'}"></div>
-            </div>
-            <div class="world-false" :style="{height: size + 'px', width: (100 - true_percent - reduce_percent) + '%'}">
+            <div class="world-true-2" ref="worldTrue" :style="{height: size + 'px', width: true_percent + '%'}">
 
-                <div class="world-false-not-fit" :style="{height: (100 - false_fit_percent - reduce_percent) + '%'}"></div>
-                <div class="world-false-fit" :style="{height: false_fit_percent + '%'}"></div>
+                <div class="world-true-not-fit" ref="worldTrueNotFit" :style="{height: (100 - true_fit_percent - reduce_percent) + '%'}"></div>
+                <div class="world-true-fit" ref="worldTrueFit" :style="{height: true_fit_percent + '%'}"></div>
+            </div>
+            <div class="world-false-2" ref="worldFalse" :style="{height: size + 'px', width: (100 - true_percent - reduce_percent) + '%'}">
+
+                <div class="world-false-not-fit" ref="worldFalseNotFit" :style="{height: (100 - false_fit_percent - reduce_percent) + '%'}"></div>
+                <div class="world-false-fit" ref="worldFalseFit" :style="{height: false_fit_percent + '%'}"></div>
             </div>
         </div>
     </div>
@@ -27,7 +27,10 @@ export default {
     created() {
         this.BASE_SIZE = 200;  // Not working
     },
-    props: ['size'],
+    props: {
+        size: Number,
+        showOnly: Array,
+    },
     data() {
         return {
             stage: "world-update-based-on-evidence",
@@ -39,6 +42,25 @@ export default {
             false_fit_percent: 10 
         };
     },
+
+    mounted() {
+        let allELems = [
+            // "worldTrue",
+            // "worldFalse",
+            "worldTrueNotFit",
+            "worldTrueFit",
+            "worldFalseFit",
+            "worldFalseNotFit"
+        ];
+        // this.$refs['worldFalseFit'].style.visibility = "hidden";
+        if (this.showOnly.length > 0) {
+            allELems.map(elem => {
+                if (!this.showOnly.includes(elem)) {
+                    this.$refs[elem].style.visibility = "hidden";
+                }
+            })
+        }
+    }
 }
 </script>
 
@@ -56,6 +78,16 @@ export default {
     border-radius: 0.5em 0 0 0.5em;
 }
 
+.world-true-2 {
+    /* background-color: #888888; */
+    width: 10%;
+    display: inline-block;
+
+    /* border: 0.5px solid white; */
+    /* border-radius: 0.5em 0 0 0.5em; */
+}
+
+
 .world-false {
     background-color: #434343;
     display: inline-block;
@@ -64,9 +96,18 @@ export default {
     border-radius: 0 0.5em 0.5em 0;
 }
 
+.world-false-2 {
+    /* background-color: #434343; */
+    display: inline-block;
+
+    /* border: 0.5px solid white; */
+    /* border-radius: 0 0.5em 0.5em 0; */
+}
+
 .world-true-not-fit {
     width: 100%;
     /* height: 59%; */
+    background-color: #888888;
 
     border: 0.5px solid white;
     border-radius: 0.5em 0 0 0;
@@ -82,6 +123,7 @@ export default {
 .world-false-not-fit {
     width: 100%;
     /* height: 89%; */
+    background-color: #434343;
 
     border: 0.5px solid white;
     border-radius: 0 0.5em 0 0;

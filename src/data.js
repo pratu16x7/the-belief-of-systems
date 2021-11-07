@@ -65,6 +65,7 @@ export default {
         "farmerAndLibrarian": {
             "id": "farmerAndLibrarian",
             "name": "farmerAndLibrarian",
+            "background": ["person.jpg", "repeat"],
             "messages": {
                 "1": {
                     "": ""
@@ -74,6 +75,7 @@ export default {
         "medicalTest": {
             "id": "medicalTest",
             "name": "medicalTest",
+            "background": ["woman.jpg", "repeat"],
             "messages": {
                 "1": {
                     "": ""
@@ -83,6 +85,7 @@ export default {
         "informationRetrieval": {
             "id": "informationRetrieval",
             "name": "informationRetrieval",
+            "background": ["doc.jpg", "repeat"],
             "messages": {
                 "1": {
                     "": ""
@@ -92,6 +95,7 @@ export default {
         "objectDetection": {
             "id": "objectDetection",
             "name": "objectDetection",
+            "background": ["cat.jpg", "full"],
             "messages": {
                 "1": {
                     "": ""
