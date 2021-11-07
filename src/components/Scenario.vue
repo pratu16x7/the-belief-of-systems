@@ -28,8 +28,10 @@ export default {
     height: 100%;
 
     margin-top: 1em;
+    position: relative;
 
     background-color: rgb(35, 44, 57);
+    background-color: rgb(25, 29, 34);
     border: 1px solid gray;
     border-radius: 1em;
 }
