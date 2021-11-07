@@ -108,7 +108,7 @@ export default {
         "medicalTest": {
             "id": "medicalTest",
             "name": "medicalTest",
-            "property": "tpFp",
+            "property": "tpfp",
             "background": ["woman.jpg", "repeat"],
             "colors": [],
             "icon": "",

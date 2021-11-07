@@ -1,6 +1,6 @@
 <template>
     <div class="flex border property" >
-        <div class="flex flex-2 flex-center"><p>P (Librarian / Evidence) = </p>
+        <div class="flex flex-2 flex-center"><p>P (Librarian | Evidence) = </p>
         </div>
         <div class="flex-v flex-1">
             <div class="numerator">
@@ -21,16 +21,6 @@ export default {
 </script>
 
 <style scoped>
-.numerator {
-    border-bottom: 1px solid white;
-    margin: 0px 10px;
-    padding-bottom: 10px;
-}
-
-.property {
-  padding-bottom: 1em;
-  border-bottom: 1px solid gray;
-}
 </style>
 
 

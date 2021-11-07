@@ -90,6 +90,24 @@ body {
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+
+.numerator {
+    border-bottom: 1px solid white;
+    margin: 0px 10px;
+    padding-bottom: 10px;
+}
+
+.property {
+  padding-bottom: 1em;
+  border-bottom: 1px solid gray;
+}
+
+.denominator{
+    padding-top: 1em;
+    margin: auto;
+}
+
+
 .flex {
   display: flex;
 }

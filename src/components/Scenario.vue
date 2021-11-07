@@ -14,8 +14,6 @@
                 v-bind:active="item.active"
             ></world-set>
 
-  
-            
             <message
                 v-for="item in stages"
                 v-bind:key="id + '_' + item.id"
@@ -26,10 +24,9 @@
         </section>
 
         <section class="properties">
-            <property-bayes></property-bayes>
-            <property-bayes></property-bayes>
-            <property-bayes></property-bayes>
-            <property-bayes></property-bayes>
+            <property-bayes ref="bayesTheorem"></property-bayes>
+            <property-t ref="tpfp"></property-t>
+            <property-precision-recall ref="precisionRecall"></property-precision-recall>
         </section>
     </div>
 </template>
@@ -39,9 +36,11 @@
 import WorldSet from './WorldSet.vue';
 import Message from './Message.vue';
 import PropertyBayes from './PropertyBayes.vue';
+import PropertyT from './PropertyT.vue';
+import PropertyPrecisionRecall from './PropertyPrecisionRecall.vue';
 
 export default {
-    components: { WorldSet, PropertyBayes, Message },
+    components: { WorldSet, PropertyBayes, Message, PropertyT, PropertyPrecisionRecall },
     props: {
         id: String,
         name: String,
@@ -56,7 +55,8 @@ export default {
         return {
             // stages: getStages(this.stages_meta, this.messages)
             stages: {},
-            activeStageId: "" 
+            activeStageId: "",
+            reveal: false
         }
     },
     mounted() {
