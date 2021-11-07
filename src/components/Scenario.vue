@@ -1,7 +1,7 @@
 <template>
     <div class="scenario">
         <section class="explainer">
-            <world-set :size="300"></world-set>
+            <world-set :size="50"></world-set>
             <p class="message message-intro"></p>
         </section>
 
