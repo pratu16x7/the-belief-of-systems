@@ -11,6 +11,7 @@
                 v-bind:id="item.id"
                 v-bind:showOnly="item.showOnly"
                 v-bind:showLayer="item.activate"
+                v-bind:background="background"
                 v-bind:active="item.active"
             ></world-set>
 
@@ -60,6 +61,7 @@ export default {
         }
     },
     mounted() {
+        console.log('start', this.name, this.background)
         Object.keys(this.stages_meta).map(key => {
             this.stages[key] = {}
             Object.assign(this.stages[key], this.stages_meta[key]);

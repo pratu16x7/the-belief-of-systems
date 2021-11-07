@@ -35,11 +35,11 @@ export default {
         },
         true_percent: {
             type: Number,
-            default: 15
+            default: 17
         },
         true_fit_percent: {
             type: Number,
-            default: 50
+            default: 55
         },
         false_fit_percent: {
             type: Number,
@@ -59,6 +59,7 @@ export default {
             "type": Boolean,
             "default": true
         },
+        background: Array
     },
     data() {
         return {
@@ -102,6 +103,20 @@ export default {
                 this.$refs['worldMap'].style.visibility = "hidden";
             }
         } 
+
+        let img_map = {
+            'doc.png': "https://gcdn.pbrd.co/images/0tt349TRgnsx.png?o=1",
+            'person.jpg': "https://gcdn.pbrd.co/images/JvtlL2cXxmq5.jpg?o=1",
+            'stormtrooper.png': "https://gcdn.pbrd.co/images/uTsgteayt9Cj.png?o=1"
+        }
+
+        console.log('last', this.id, this.background);
+        if (this.background && this.background.length > 0) {
+            this.$refs['worldMap'].style.background = `url(${img_map[this.background[0]]})`;
+            if(this.background[1] == "cover") {
+                this.$refs['worldMap'].style.backgroundSize = 'cover';
+            }
+        }
     },
 }
 </script>
@@ -110,6 +125,26 @@ export default {
 .world-set {
     margin: auto;
     /* background-color: green; */
+}
+
+/* background-image: url("");
+background-size: contain;
+background-position-y: bottom; */
+
+.world-prior {
+    opacity: 0.7;
+}
+
+.world-update-based-on-evidence {
+    opacity: 0.7;
+}
+
+.property .world-prior {
+    opacity: 1;
+}
+
+.property .world-update-based-on-evidence {
+    opacity: 1;
 }
 
 .world-true {

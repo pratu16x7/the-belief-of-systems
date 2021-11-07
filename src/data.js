@@ -109,7 +109,7 @@ export default {
             "id": "medicalTest",
             "name": "medicalTest",
             "property": "tpfp",
-            "background": ["woman.jpg", "repeat"],
+            "background": ["person.jpg", "repeat"],
             "colors": [],
             "icon": "",
             "messages": {
@@ -141,9 +141,9 @@ export default {
         },
         "informationRetrieval": {
             "id": "informationRetrieval",
-            "name": "informationRetrieval",
+            "name": "Information Retrieval",
             "property": "precisionRecall",
-            "background": ["doc.jpg", "repeat"],
+            "background": ["doc.png", "repeat"],
             "colors": [],
             "icon": "",
             "messages": {
@@ -177,7 +177,7 @@ export default {
             "id": "objectDetection",
             "name": "objectDetection",
             "property": "precisionRecall",
-            "background": ["cat.jpg", "full"],
+            "background": ["stormtrooper.png", "cover"],
             "colors": [],
             "icon": "",
             "messages": {
