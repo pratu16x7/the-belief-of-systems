@@ -29,24 +29,34 @@ export default {
     },
     props: {
         size: Number,
+        true_percent: {
+            type: Number,
+            default: 15
+        },
+        true_fit_percent: {
+            type: Number,
+            default: 50
+        },
+        false_fit_percent: {
+            type: Number,
+            default: 20
+        },
         showOnly: Array,
     },
     data() {
         return {
             stage: "world-update-based-on-evidence",
             // stage: "world-prior",
-            true_percent: 10,  // 50:4, 100:2, 200:1
+            // true_percent: 10,  // 50:4, 100:2, 200:1
 
             reduce_percent: this.size < window.BASE_SIZE ? Math.ceil(window.BASE_SIZE/this.size) : 1,  // due to border
-            true_fit_percent: 40,
-            false_fit_percent: 10 
+            // true_fit_percent: 40,
+            // false_fit_percent: 10 
         };
     },
 
     mounted() {
         let allELems = [
-            // "worldTrue",
-            // "worldFalse",
             "worldTrueNotFit",
             "worldTrueFit",
             "worldFalseFit",

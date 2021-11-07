@@ -52,6 +52,32 @@ import data from './data';
 <style lang="css">
 body {
   background-color: rgb(46, 53, 64);
+  color: #fff;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+.flex {
+  display: flex;
+}
+
+.flex-v {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-1 {
+  flex: 1
+}
+
+.flex-2 {
+  flex: 2
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+
 </style>
 
