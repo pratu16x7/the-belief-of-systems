@@ -84,26 +84,21 @@ export default {
                 }
             })
         }
+        if (this.showLayer) {
+            if (this.showLayer == "worldMap") {
+                this.stage = "";
+                this.$refs['worldMap'].style.background = "blue";
+            }
+            if (this.showLayer == "worldPrior") {
+                this.stage = "world-prior";
+            }
+            // if (this.showLayer == "worldEvidence") {
 
-        // if (this.showLayer) {
-        //     if (this.showLayer == "worldMap") {
-        //         this.$refs['worldPrior'].style.visibility = "hidden";
-        //         this.$refs['worldEvidence'].style.visibility = "hidden";
-        //     }
-        //     if (this.showLayer == "worldPrior") {
-        //         // this.$refs['worldPrior'].style.visibility = "hidden";
-        //         this.$refs['worldEvidence'].style.visibility = "hidden";
-        //     }
-        //     if (this.showLayer == "worldEvidence") {
-        //         this.$refs['worldPrior'].style.display = "None";
-        //         // this.$refs['worldEvidence'].style.visibility = "hidden";
-        //     }
-        //     if (this.showLayer == "None") {
-        //         this.$refs['worldMap'].style.visibility = "hidden";
-        //         this.$refs['worldPrior'].style.visibility = "hidden";
-        //         this.$refs['worldEvidence'].style.visibility = "hidden";
-        //     }
-        // } 
+            // }
+            if (this.showLayer == "None") {
+                this.$refs['worldMap'].style.visibility = "hidden";
+            }
+        } 
     },
 }
 </script>
