@@ -1,6 +1,6 @@
 <template>
-  <div class="main-page">{{ name }}
-    <section>
+  <div class="main-page">
+    <section class="scenario-toggles">
       <scenario-toggle> </scenario-toggle>
     </section>
     
@@ -34,9 +34,16 @@ import data from './data';
 <style lang="css" scoped>
 .main-page {
   width: 1080px;
+  height: 720px;
   margin: 1em auto;
+
+  display: flex;
+  flex-direction: column;
+}
+.scenario-toggles {
+  height: 3em;
+
   background-color: rgb(35, 44, 57);
-  height: 1000px;
   border: 1px solid gray;
   border-radius: 1em;
 }

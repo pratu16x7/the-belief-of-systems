@@ -1,12 +1,14 @@
 <template>
-    <section class="explainer">
-    <world-set></world-set>
-        <p class="message message-intro"></p>
-    </section>
+    <div class="scenario">
+        <section class="explainer">
+            <world-set></world-set>
+            <p class="message message-intro"></p>
+        </section>
 
-    <section class="properties">
-        <property-bayes></property-bayes>
-    </section>
+        <section class="properties">
+            <property-bayes></property-bayes>
+        </section>
+    </div>
 </template>
 
 <script>
@@ -18,3 +20,25 @@ export default {
     components: { WorldSet, PropertyBayes }
 }
 </script>
+
+<style scoped>
+.scenario {
+    flex: 1;
+    display: flex;
+    height: 100%;
+
+    margin-top: 1em;
+
+    background-color: rgb(35, 44, 57);
+    border: 1px solid gray;
+    border-radius: 1em;
+}
+.explainer { 
+    flex: 2;
+    border-right: 1px solid white;
+}
+.properties { 
+    flex: 1;
+    /* border: 1px solid white; */
+}
+</style>
