@@ -59,7 +59,7 @@ export default {
             "type": Boolean,
             "default": true
         },
-        background: Array
+        background: Array,
     },
     data() {
         return {
@@ -133,11 +133,11 @@ background-size: contain;
 background-position-y: bottom; */
 
 .world-prior {
-    opacity: 0.7;
+    opacity: 0.85;
 }
 
 .world-update-based-on-evidence {
-    opacity: 0.7;
+    opacity: 0.85;
 }
 
 .property .world-prior {

@@ -5,9 +5,9 @@
             </div>
             <div class="flex-v flex-1">
                 <div class="numerator">
-                    <world-set :size="50" :showOnly="['worldTrueFit']"></world-set>
+                    <world-set :size="50" v-bind:true_percent="true_percent" :showOnly="['worldTrueFit']"></world-set>
                 </div>
-                <div><world-set :size="50" :showOnly="['worldTrueFit', 'worldFalseFit']"></world-set></div>
+                <div><world-set :size="50" v-bind:true_percent="true_percent" :showOnly="['worldTrueFit', 'worldFalseFit']"></world-set></div>
             </div>
         </div>
         <div class="flex " >
@@ -15,9 +15,9 @@
             </div>
             <div class="flex-v flex-1">
                 <div class="numerator">
-                    <world-set :size="50" :showOnly="['worldTrueFit']"></world-set>
+                    <world-set :size="50" v-bind:true_percent="true_percent" :showOnly="['worldTrueFit']"></world-set>
                 </div>
-                <div class="denominator"><world-set :size="50" :showOnly="['worldTrueFit', 'worldTrueNotFit']"></world-set></div>
+                <div class="denominator"><world-set :size="50" v-bind:true_percent="true_percent" :showOnly="['worldTrueFit', 'worldTrueNotFit']"></world-set></div>
             </div>
         </div>
     </div>
@@ -28,7 +28,10 @@
 
 import WorldSet from './WorldSet.vue';
 export default {
-    components: { WorldSet }
+    components: { WorldSet },
+    props: {
+        true_percent: Number
+    }
 }
 </script>
 

@@ -13,6 +13,7 @@
                     v-bind:showLayer="item.activate"
                     v-bind:background="background"
                     v-bind:active="item.active"
+                    v-bind:true_percent="priorval"
                 ></world-set>
             </div>
             
@@ -31,9 +32,9 @@
         </section>
 
         <section class="properties">
-            <property-bayes ref="bayesTheorem"></property-bayes>
-            <property-t ref="tpfp"></property-t>
-            <property-precision-recall ref="precisionRecall"></property-precision-recall>
+            <property-bayes ref="bayesTheorem" v-bind:true_percent="priorval"></property-bayes>
+            <property-t ref="tpfp" v-bind:true_percent="priorval"></property-t>
+            <property-precision-recall ref="precisionRecall" v-bind:true_percent="priorval"></property-precision-recall>
         </section>
     </div>
 </template>
@@ -56,7 +57,8 @@ export default {
         colors: Array,
         messages: Object,
         active: Boolean,
-        stages_meta: Object
+        stages_meta: Object,
+        priorval: Number
     },
     data() {
         return {

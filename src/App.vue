@@ -2,7 +2,8 @@
   <div class="main-page">
     <h1>The Belief of Systems</h1>
     <p>Ways to measure the Belief of the things that can have one, including ourselves :)</p>
-    
+
+    <input v-model="priorval">
     <section class="scenario-toggles flex">
       <scenario-toggle
         v-for="item in scenarios"
@@ -26,6 +27,8 @@
       v-bind:messages="item.messages"
       v-bind:stages_meta="stages"
       v-bind:active="scenarios[item.id]['active']"
+
+      v-bind:priorval="priorval"
     ></scenario>
   </div>
   
@@ -50,6 +53,7 @@ import data from './data';
             
             scenarios: data['scenarios'],
             stages: data['stages'],
+            priorval: 17
         };
     },
     metadata: data,
