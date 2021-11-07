@@ -1,16 +1,16 @@
 <template>
-    <div class="world-set">
+    <div class="world-set" :style="{height: size + 'px', width: size + 'px'}">
         <div v-if="stage=='world-prior'" class="world-prior">
-            <div class="world-true"></div>
-            <div class="world-false"></div>
+            <div class="world-true" :style="{height: size + 'px'}"></div>
+            <div class="world-false" :style="{height: size + 'px'}"></div>
         </div>
 
         <div v-if="stage=='world-update-based-on-evidence'" class="world-update-based-on-evidence">
-            <div class="world-true">
+            <div class="world-true" :style="{height: size + 'px'}">
                 <div class="world-true-not-fit"></div>
                 <div class="world-true-fit"></div>
             </div>
-            <div class="world-false">
+            <div class="world-false" :style="{height: size + 'px'}">
                 <div class="world-false-not-fit"></div>
                 <div class="world-false-fit"></div>
             </div>
@@ -24,6 +24,7 @@ export default {
     data() {
         return {
             stage: "world-update-based-on-evidence",
+            size: 300
         };
     },
 }
@@ -31,14 +32,10 @@ export default {
 
 <style lang="css" scoped>
 .world-set {
-    height: 200px;
-    width: 200px;
-    
     margin: auto;
 }
 
 .world-true {
-    height: 200px;
     background-color: #888888;
     width: 10%;
     display: inline-block;
@@ -48,7 +45,6 @@ export default {
 }
 
 .world-false {
-    height: 200px;
     background-color: #434343;
     width: 89%;
     display: inline-block;
