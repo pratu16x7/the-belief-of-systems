@@ -32,6 +32,19 @@ import data from './data';
 </script>
 
 <style lang="css" scoped>
+.main-page {
+  width: 1080px;
+  margin: 1em auto;
+  background-color: rgb(35, 44, 57);
+  height: 1000px;
+  border: 1px solid gray;
+  border-radius: 1em;
+}
+</style>
 
+<style lang="css">
+body {
+  background-color: rgb(46, 53, 64);
+}
 </style>
 
