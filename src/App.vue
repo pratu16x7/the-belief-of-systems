@@ -1,5 +1,8 @@
 <template>
   <div class="main-page">
+    <h1>The Belief of Systems</h1>
+    <p>Ways to measure the Belief of the things that can have one, including ourselves :)</p>
+    
     <section class="scenario-toggles flex">
       <scenario-toggle
         v-for="item in scenarios"

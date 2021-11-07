@@ -1,27 +1,33 @@
 <template>
     <div v-show="active" class="scenario">
         <!-- {{messages}} -->
-        <button v-on:click="activateNextStage">Next</button>
-        <section class="explainer">
+        <section class="explainer flex-v flex-center">
 
             <!-- v-bind:size="item.size" -->
-            <world-set
-                v-for="item in stages"
-                v-bind:key="id + '_' + item.id"
-                v-bind:id="item.id"
-                v-bind:showOnly="item.showOnly"
-                v-bind:showLayer="item.activate"
-                v-bind:background="background"
-                v-bind:active="item.active"
-            ></world-set>
+            <div class="worldsets">
+                <world-set
+                    v-for="item in stages"
+                    v-bind:key="id + '_' + item.id"
+                    v-bind:id="item.id"
+                    v-bind:showOnly="item.showOnly"
+                    v-bind:showLayer="item.activate"
+                    v-bind:background="background"
+                    v-bind:active="item.active"
+                ></world-set>
+            </div>
+            
+            <div class="messages">
+                <message
+                    v-for="item in stages"
+                    v-bind:key="id + '_' + item.id"
+                    v-bind:id="item.id"
+                    v-bind:message="item.message"
+                    v-bind:active="item.active"
+                ></message>
+            </div>
 
-            <message
-                v-for="item in stages"
-                v-bind:key="id + '_' + item.id"
-                v-bind:id="item.id"
-                v-bind:message="item.message"
-                v-bind:active="item.active"
-            ></message>
+
+            <button v-on:click="activateNextStage">Next</button>
         </section>
 
         <section class="properties">

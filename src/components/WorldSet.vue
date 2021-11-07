@@ -124,6 +124,7 @@ export default {
 <style lang="css" scoped>
 .world-set {
     margin: auto;
+    border-radius: 0.5em;
     /* background-color: green; */
 }
 
