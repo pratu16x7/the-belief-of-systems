@@ -1,17 +1,17 @@
 <template>
-    <div class="world-set" :style="{height: size + 'px', width: size + 'px'}">
+    <div class="world-set" :class="id" :style="{height: size + 'px', width: size + 'px'}"  ref="worldMap">
         <div v-if="stage=='world-prior'" class="world-prior" ref="worldPrior">
             <div class="world-true" ref="worldTrue" :style="{height: size + 'px', width: true_percent + '%'}"></div>
             <div class="world-false" ref="worldFalse" :style="{height: size + 'px', width: (100 - true_percent - reduce_percent) + '%'}"></div>
         </div>
 
         <div v-if="stage=='world-update-based-on-evidence'" class="world-update-based-on-evidence">
-            <div class="world-true-2" ref="worldTrue" :style="{height: size + 'px', width: true_percent + '%'}">
+            <div class="world-true-2" ref="worldTrue2" :style="{height: size + 'px', width: true_percent + '%'}">
 
                 <div class="world-true-not-fit" ref="worldTrueNotFit" :style="{height: (100 - true_fit_percent - reduce_percent) + '%'}"></div>
                 <div class="world-true-fit" ref="worldTrueFit" :style="{height: true_fit_percent + '%'}"></div>
             </div>
-            <div class="world-false-2" ref="worldFalse" :style="{height: size + 'px', width: (100 - true_percent - reduce_percent) + '%'}">
+            <div class="world-false-2" ref="worldFalse2" :style="{height: size + 'px', width: (100 - true_percent - reduce_percent) + '%'}">
 
                 <div class="world-false-not-fit" ref="worldFalseNotFit" :style="{height: (100 - false_fit_percent - reduce_percent) + '%'}"></div>
                 <div class="world-false-fit" ref="worldFalseFit" :style="{height: false_fit_percent + '%'}"></div>
@@ -28,7 +28,11 @@ export default {
         this.BASE_SIZE = 200;  // Not working
     },
     props: {
-        size: Number,
+        id: String,
+        size: {
+            type: Number,
+            default: 200
+        },
         true_percent: {
             type: Number,
             default: 15
@@ -41,7 +45,17 @@ export default {
             type: Number,
             default: 20
         },
-        showOnly: Array,
+        showOnly: {
+            type: Array,
+            default() {
+                return []
+            }
+        },
+        showLayer: {
+            type: String,
+            default: ""
+        },
+        active: Boolean
     },
     data() {
         return {
@@ -70,13 +84,34 @@ export default {
                 }
             })
         }
-    }
+
+        // if (this.showLayer) {
+        //     if (this.showLayer == "worldMap") {
+        //         this.$refs['worldPrior'].style.visibility = "hidden";
+        //         this.$refs['worldEvidence'].style.visibility = "hidden";
+        //     }
+        //     if (this.showLayer == "worldPrior") {
+        //         // this.$refs['worldPrior'].style.visibility = "hidden";
+        //         this.$refs['worldEvidence'].style.visibility = "hidden";
+        //     }
+        //     if (this.showLayer == "worldEvidence") {
+        //         this.$refs['worldPrior'].style.display = "None";
+        //         // this.$refs['worldEvidence'].style.visibility = "hidden";
+        //     }
+        //     if (this.showLayer == "None") {
+        //         this.$refs['worldMap'].style.visibility = "hidden";
+        //         this.$refs['worldPrior'].style.visibility = "hidden";
+        //         this.$refs['worldEvidence'].style.visibility = "hidden";
+        //     }
+        // } 
+    },
 }
 </script>
 
 <style lang="css" scoped>
 .world-set {
     margin: auto;
+    /* background-color: green; */
 }
 
 .world-true {

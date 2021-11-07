@@ -1,9 +1,22 @@
 <template>
     <div v-show="active" class="scenario">
-        {{name}}
+        <!-- {{messages}} -->
         <section class="explainer">
-            <world-set :size="200" :showOnly="[]"></world-set>
-            <p class="message message-intro"></p>
+
+            <!-- v-bind:size="item.size" -->
+            <world-set
+                v-for="item in stages"
+                v-bind:key="id + '_' + item.id"
+                v-bind:id="item.id"
+                v-bind:showOnly="item.showOnly"
+                v-bind:showLayer="item.activate"
+                v-bind:active="item.active"
+            ></world-set>
+
+            <!-- <p class="message message-intro"
+                v-for="item in stages"
+            ></p> -->
+
         </section>
 
         <section class="properties">
@@ -26,10 +39,39 @@ export default {
         id: String,
         name: String,
         property: String,
-        background: String,
+        background: Array,
         colors: Array,
         messages: Object,
-        active: Boolean
+        active: Boolean,
+        stages_meta: Object
+    },
+    data() {
+        return {
+            // stages: getStages(this.stages_meta, this.messages)
+            stages: {}
+        }
+    },
+    mounted() {
+        Object.keys(this.stages_meta).map(key => {
+            this.stages[key] = this.stages_meta[key]
+            this.stages[key]['message'] = this.messages[key]["message"]
+        });
+    },
+    // methods: {
+    //     getStages(stages_meta, messages) {
+    //         stages = {}
+    //         Object.keys(this.stages_meta).map(key => {
+    //             this.stages[key]['active'] = 0
+    //         });
+    //         this.scenarios[scenarioId]['active'] = 1
+    //         return 
+    //     }
+    // }
+
+    methods: {
+        updateStage(stage_info) {
+            return stage_info
+        }
     }
 }
 </script>

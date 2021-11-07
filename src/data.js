@@ -3,38 +3,46 @@ export default {
         "intro": {
             "id": "intro",
             "description": "Presenting the evidence",
-            "message": "Steve is a meek and tidy soul" // 
+            "message": "Steve is a meek and tidy soul",
+            "activate": "None"
             // 
         },
         "prePrior": {
             "id": "prePrior",
-            "description": "Existing empty world: empty un orged world or filled with two parts",
-            "message": ""
+            "description": "Existing empty world: empty un orged world or filled with two activate",
+            "message": "",
+            "activate": "worldMap"
         },
         "prior": {  // is also a belief, just as the later belief
             "id": "prior",
             "description": "Setting the Prior, divinding the word: Your world of farmers and librarians, or rel and non-rel docs, or cancer and non-cancer patients",
-            "message": "Forget the info, what do you already know?"
+            "message": "Forget the info, what do you already know?",
+            "activate": "worldPrior"
         },
         "evidenceBeliefFormulation": {
             "id": "evidenceBeliefFormulation",
             "description": "Reframing the evidence and stating our off hand opnion now",
-            "message": "So librarians is 4 times more likely"
+            "message": "So librarians is 4 times more likely",
+            "activate": "None"
         },
         "updateBasedOnEvidence": {
             "id": "updateBasedOnEvidence",
             "description": "Update your world",
-            "message": "That how it would look in our current world"
+            "message": "That how it would look in our current world",
+            "activate": "worldEvidence"
         },
         "ourNewWorld": {
             "id": "ourNewWorld",
             "description": "Highlight",
-            "message": "This is our new world"
+            "message": "This is our new world",
+            // "activate": "None",
+            "showOnly": ["worldTrueFit", "worldFalseFit"],
         },
         "propertyGraphical": {
             "id": "propertyGraphical",
             "description": "show the formula graphically",
-            "message": "And this is our value"
+            "message": "And this is our value",
+            "activate": "None"
         },
         // "calculations": {
         //     // This is where custom values can go
@@ -105,9 +113,30 @@ export default {
             "colors": [],
             "icon": "",
             "messages": {
-                "1": {
-                    "": ""
-                }
+                "intro": {
+                    "message": "Steve is a meek and tidy soul" // 
+                },
+                "prePrior": {
+                    "message": ""
+                },
+                "prior": {
+                    "message": "Forget the info, what do you already know?"
+                },
+                "evidenceBeliefFormulation": {
+                    "message": "So librarians is 4 times more likely"
+                },
+                "updateBasedOnEvidence": {
+                    "message": "That how it would look in our current world"
+                },
+                "ourNewWorld": {
+                    "message": "This is our new world"
+                },
+                "propertyGraphical": {
+                    "message": "And this is our value"
+                },
+                // "calculations": {
+                //     "message": "And this is our value"
+                // }
             }
         },
         "informationRetrieval": {
@@ -118,9 +147,30 @@ export default {
             "colors": [],
             "icon": "",
             "messages": {
-                "1": {
-                    "": ""
-                }
+                "intro": {
+                    "message": "Steve is a meek and tidy soul" // 
+                },
+                "prePrior": {
+                    "message": ""
+                },
+                "prior": {
+                    "message": "Forget the info, what do you already know?"
+                },
+                "evidenceBeliefFormulation": {
+                    "message": "So librarians is 4 times more likely"
+                },
+                "updateBasedOnEvidence": {
+                    "message": "That how it would look in our current world"
+                },
+                "ourNewWorld": {
+                    "message": "This is our new world"
+                },
+                "propertyGraphical": {
+                    "message": "And this is our value"
+                },
+                // "calculations": {
+                //     "message": "And this is our value"
+                // }
             }
         },
         "objectDetection": {
@@ -131,9 +181,30 @@ export default {
             "colors": [],
             "icon": "",
             "messages": {
-                "1": {
-                    "": ""
-                }
+                "intro": {
+                    "message": "Steve is a meek and tidy soul" // 
+                },
+                "prePrior": {
+                    "message": ""
+                },
+                "prior": {
+                    "message": "Forget the info, what do you already know?"
+                },
+                "evidenceBeliefFormulation": {
+                    "message": "So librarians is 4 times more likely"
+                },
+                "updateBasedOnEvidence": {
+                    "message": "That how it would look in our current world"
+                },
+                "ourNewWorld": {
+                    "message": "This is our new world"
+                },
+                "propertyGraphical": {
+                    "message": "And this is our value"
+                },
+                // "calculations": {
+                //     "message": "And this is our value"
+                // }
             }
         },
     }

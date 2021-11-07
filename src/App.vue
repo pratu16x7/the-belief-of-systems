@@ -21,6 +21,7 @@
       v-bind:background="item.background"
       v-bind:colors="item.colors"
       v-bind:messages="item.messages"
+      v-bind:stages_meta="stages"
       v-bind:active="scenarios[item.id]['active']"
     ></scenario>
   </div>
@@ -45,12 +46,13 @@ import data from './data';
             name: "The Belief of Systems",
             
             scenarios: data['scenarios'],
+            stages: data['stages'],
         };
     },
     metadata: data,
     mounted() {
         Object.keys(this.scenarios).map(key => {
-            this.scenarios[key]['active'] = 0
+            this.scenarios[key]['active'] = false
         });
         this.activateScenario("farmerAndLibrarian")
         // this.$refs.fileInput.click()
@@ -58,9 +60,9 @@ import data from './data';
     methods: {
         activateScenario(scenarioId) {
             Object.keys(this.scenarios).map(key => {
-                this.scenarios[key]['active'] = 0
+                this.scenarios[key]['active'] = false
             });
-            this.scenarios[scenarioId]['active'] = 1
+            this.scenarios[scenarioId]['active'] = true
         }
     }
   };
