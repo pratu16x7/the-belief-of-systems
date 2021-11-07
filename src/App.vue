@@ -1,10 +1,28 @@
 <template>
   <div class="main-page">
-    <section class="scenario-toggles">
-      <scenario-toggle> </scenario-toggle>
+    <section class="scenario-toggles flex">
+      <scenario-toggle
+        v-for="item in scenarios"
+        v-bind:key="item.id"
+        v-bind:scenarioName="item.name"
+        v-bind:scenarioId="item.id"
+        v-bind:icon="item.icon"
+        v-bind:active="scenarios[item.id]['active']"
+        v-on:click="activateScenario(item.id)"
+      ></scenario-toggle>
     </section>
     
-    <scenario></scenario>
+    <scenario
+      v-for="item in scenarios"
+      v-bind:key="item.id"
+      v-bind:id="item.id"
+      v-bind:name="item.name"
+      v-bind:property="item.property"
+      v-bind:background="item.background"
+      v-bind:colors="item.colors"
+      v-bind:messages="item.messages"
+      v-bind:active="scenarios[item.id]['active']"
+    ></scenario>
   </div>
   
   <!-- <scraps>woo</scraps> -->
@@ -22,12 +40,29 @@ import data from './data';
 
   export default {
     components: { Scenario, ScenarioToggle },
-      data() {
-        console.log(data);
+    data() {
         return {
             name: "The Belief of Systems",
+            
+            scenarios: data['scenarios'],
         };
-      },
+    },
+    metadata: data,
+    mounted() {
+        Object.keys(this.scenarios).map(key => {
+            this.scenarios[key]['active'] = 0
+        });
+        this.activateScenario("farmerAndLibrarian")
+        // this.$refs.fileInput.click()
+    },
+    methods: {
+        activateScenario(scenarioId) {
+            Object.keys(this.scenarios).map(key => {
+                this.scenarios[key]['active'] = 0
+            });
+            this.scenarios[scenarioId]['active'] = 1
+        }
+    }
   };
 </script>
 
@@ -41,11 +76,8 @@ import data from './data';
   flex-direction: column;
 }
 .scenario-toggles {
-  height: 3em;
-
-  background-color: rgb(35, 44, 57);
-  border: 1px solid gray;
-  border-radius: 1em;
+    /* margin: 0 100px; */
+    gap: 0px 15px;
 }
 </style>
 
@@ -74,6 +106,7 @@ body {
 }
 
 .flex-center {
+  display: flex;
   align-items: center;
   justify-content: center;
 }

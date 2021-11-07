@@ -1,11 +1,15 @@
 <template>
-    <div class="scenario">
+    <div v-show="active" class="scenario">
+        {{name}}
         <section class="explainer">
             <world-set :size="200" :showOnly="[]"></world-set>
             <p class="message message-intro"></p>
         </section>
 
         <section class="properties">
+            <property-bayes></property-bayes>
+            <property-bayes></property-bayes>
+            <property-bayes></property-bayes>
             <property-bayes></property-bayes>
         </section>
     </div>
@@ -17,7 +21,16 @@ import WorldSet from './WorldSet.vue';
 import PropertyBayes from './PropertyBayes.vue';
 
 export default {
-    components: { WorldSet, PropertyBayes }
+    components: { WorldSet, PropertyBayes },
+    props: {
+        id: String,
+        name: String,
+        property: String,
+        background: String,
+        colors: Array,
+        messages: Object,
+        active: Boolean
+    }
 }
 </script>
 
