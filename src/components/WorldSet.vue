@@ -1,5 +1,5 @@
 <template>
-    <div class="world-set" :class="id" :style="{height: size + 'px', width: size + 'px'}"  ref="worldMap">
+    <div v-show="active" class="world-set" :class="id" :style="{height: size + 'px', width: size + 'px'}"  ref="worldMap">
         <div v-if="stage=='world-prior'" class="world-prior" ref="worldPrior">
             <div class="world-true" ref="worldTrue" :style="{height: size + 'px', width: true_percent + '%'}"></div>
             <div class="world-false" ref="worldFalse" :style="{height: size + 'px', width: (100 - true_percent - reduce_percent) + '%'}"></div>

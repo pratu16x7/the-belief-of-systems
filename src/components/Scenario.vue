@@ -1,6 +1,7 @@
 <template>
     <div v-show="active" class="scenario">
         <!-- {{messages}} -->
+        <button v-on:click="activateNextStage">Next</button>
         <section class="explainer">
 
             <!-- v-bind:size="item.size" -->
@@ -16,6 +17,7 @@
             <!-- <p class="message message-intro"
                 v-for="item in stages"
             ></p> -->
+            
 
         </section>
 
@@ -48,29 +50,41 @@ export default {
     data() {
         return {
             // stages: getStages(this.stages_meta, this.messages)
-            stages: {}
+            stages: {},
+            activeStageId: "" 
         }
     },
     mounted() {
         Object.keys(this.stages_meta).map(key => {
             this.stages[key] = this.stages_meta[key]
             this.stages[key]['message'] = this.messages[key]["message"]
+            this.stages[key]['active'] = false
         });
-    },
-    // methods: {
-    //     getStages(stages_meta, messages) {
-    //         stages = {}
-    //         Object.keys(this.stages_meta).map(key => {
-    //             this.stages[key]['active'] = 0
-    //         });
-    //         this.scenarios[scenarioId]['active'] = 1
-    //         return 
-    //     }
-    // }
+        this.activeStageId = Object.keys(this.stages)[0]
+        this.stages[this.activeStageId]['active'] = true
 
+    },
     methods: {
-        updateStage(stage_info) {
-            return stage_info
+        activateNextStage() {
+            this.stages[this.activeStageId]['active'] = false
+            let stage_ids = Object.keys(this.stages)
+            let index = stage_ids.indexOf(this.activeStageId)
+            if (index < stage_ids.length - 1) {
+                this.activeStageId = stage_ids[index + 1] 
+            }
+            else {
+                this.activeStageId = stage_ids[0]
+            }
+
+            this.stages[this.activeStageId]['active'] = true
+
+            // current_index = 0;
+            
+            // Object.keys(this.stages).map((key, index) => {
+            //     this.stages[key] = this.stages_meta[key]
+            //     this.stages[key]['message'] = this.messages[key]["message"]
+            // }); 
+            // next_index = 
         }
     }
 }
