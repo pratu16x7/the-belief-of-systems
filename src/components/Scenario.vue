@@ -56,7 +56,8 @@ export default {
     },
     mounted() {
         Object.keys(this.stages_meta).map(key => {
-            this.stages[key] = this.stages_meta[key]
+            this.stages[key] = {}
+            Object.assign(this.stages[key], this.stages_meta[key]);
             this.stages[key]['message'] = this.messages[key]["message"]
             this.stages[key]['active'] = false
         });
