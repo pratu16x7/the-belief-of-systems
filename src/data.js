@@ -2,6 +2,8 @@
 
 The boxed representation in more intuitive, but calcs/cutomize only in the rectangle one, single accesible slide (show calcs toggle).
 
+Keep the box constant, not the stages. Not drastically different stages mind you, but enough difference to fit the scenario.
+
 You can start filling the table and tell the story:
 - label each part in some way, either arrows or separate section.
 - P(x|R) is the given relevant is it retrieved.
