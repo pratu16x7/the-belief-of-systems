@@ -1,3 +1,17 @@
+/*
+
+The boxed representation in more intuitive, but calcs/cutomize only in the rectangle one, single accesible slide (show calcs toggle).
+
+label each part in some way, either arrows or separate section.
+
+You can start filling the table and tell the story.
+
+P(x|R) is the given relevant is it retrieved.
+
+Saturn example.
+
+*/
+
 export default {
     "stages": {
         "intro": {
